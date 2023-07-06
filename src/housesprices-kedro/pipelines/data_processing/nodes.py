@@ -2,8 +2,12 @@ import numpy as np
 from sklearn.preprocessing import OneHotEncoder
 import pandas as pd
 from sklearn.impute import SimpleImputer
+from prefect import flow
+
+@flow
 
 def remove_outliers(train, parameters):
+
     train = train.copy()
     train = train.drop(train[(train['GrLivArea'] > parameters['outliers']['GrLivArea']) &
                              (train['SalePrice'] < parameters['outliers']['SalePrice'])]

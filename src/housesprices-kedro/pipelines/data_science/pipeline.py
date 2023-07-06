@@ -1,6 +1,8 @@
 from kedro.pipeline import Pipeline, node, pipeline
 from .nodes import evaluate_model, split_data, train_model, gen_artifacts
+from prefect import flow
 
+@flow
 
 def create_pipeline(**kwargs) -> Pipeline:
     return pipeline(
