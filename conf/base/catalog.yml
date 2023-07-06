@@ -1,4 +1,64 @@
 # Here you can define all your data sets by using simple YAML syntax.
 #
 # Documentation for this file format can be found in "The Data Catalog"
-# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+# Link: https://kedro.readthedocs.io/en/stable/data/data_catalog.html
+#
+# We support interacting with a variety of data stores including local file systems, cloud, network and HDFS
+#
+
+raw_data:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/train.csv
+
+house_prices:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/train.csv
+
+house_prices_no_outliers:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/house_prices_no_outliers.csv
+
+house_prices_target:
+  type: pandas.CSVDataSet
+  filepath: data/05_model_input/house_prices_target.csv
+
+X_train:
+  type: pandas.CSVDataSet
+  filepath: data/05_model_input/X_train.csv
+
+y_train:
+  type: pandas.CSVDataSet
+  filepath: data/05_model_input/y_train.csv
+
+X_test:
+    type: pandas.CSVDataSet
+    filepath: data/05_model_input/X_test.csv
+
+y_test:
+    type: pandas.CSVDataSet
+    filepath: data/05_model_input/y_test.csv
+
+house_prices_drop:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/house_prices_drop.csv
+
+house_prices_no_na:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/house_prices_no_na.csv
+
+house_prices_clean:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/house_prices_clean.csv
+
+house_ohe_prices_for_model:
+    type: pandas.CSVDataSet
+    filepath: data/05_model_input/house_prices_for_model.csv
+
+model_pkl:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/regressor.pickle
+  versioned: true
+
+artefacts:
+  type: pandas.CSVDataSet
+  filepath: data/07_model_output/artefacts.csv

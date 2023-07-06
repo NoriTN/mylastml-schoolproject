@@ -34,7 +34,7 @@ loggers:
   kedro:
     level: INFO
 
-  mylastml_schoolproject:
+  housesprices-kedro:
     level: INFO
 
 root:

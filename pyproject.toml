@@ -1,6 +1,6 @@
 [tool.kedro]
-package_name = "mylastml_schoolproject"
-project_name = "MyLastML-SchoolProject"
+package_name = "housesprices-kedro"
+project_name = "housesprices-kedro"
 kedro_init_version = "0.18.11"
 
 [tool.isort]
@@ -9,7 +9,7 @@ profile = "black"
 [tool.pytest.ini_options]
 addopts = """
 --cov-report term-missing \
---cov src/mylastml_schoolproject -ra"""
+--cov src/housesprices-kedro -ra"""
 
 [tool.coverage.report]
 fail_under = 0
