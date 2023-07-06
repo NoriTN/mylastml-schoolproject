@@ -1,0 +1,15 @@
+RUN pip install --upgrade pip
+
+WORKDIR /app
+
+COPY parameters.yml /app/kedro.yml
+
+COPY requirements.txt /app/requirements.txt
+
+RUN pip install -r requirements.txt
+
+RUN kedro new --starter=spaceflights
+
+CMD ["kedro","run"]
+
+EXPOSE 8000

@@ -1,0 +1,6 @@
+python==3.10-slim
+numpy
+pandas
+sklearn
+kedro==0.18.11
+
