@@ -8,7 +8,7 @@ from sklearn.metrics import r2_score
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import HistGradientBoostingRegressor
 from matplotlib import pyplot as plt
-
+import logging
 def split_data(data: pd.DataFrame, target: pd.DataFrame, parameters: Dict) -> Tuple:
     """Splits data into features and targets training and test sets.
 
@@ -19,6 +19,10 @@ def split_data(data: pd.DataFrame, target: pd.DataFrame, parameters: Dict) -> Tu
         Split data.
     """
     X = data[parameters["features"]]
+
+    logging.getLogger(__name__)
+    logging.warn("Features used for training: %s", parameters["features"])
+
     y = target["SalePrice"]
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=parameters["test_size"], random_state=parameters["random_state"]
