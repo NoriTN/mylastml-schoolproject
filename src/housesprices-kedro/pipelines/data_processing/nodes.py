@@ -1,5 +1,4 @@
 import numpy as np
-from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import OneHotEncoder
 import pandas as pd
 from sklearn.impute import SimpleImputer
@@ -36,7 +35,6 @@ def fill_na(train, parameters):
     train['LotFrontage'] = impute_float.fit_transform(train[['LotFrontage']])
 
     return train
-
 
 def total_sf(train):
     train = train.copy()

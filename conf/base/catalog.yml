@@ -62,3 +62,7 @@ model_pkl:
 artefacts:
   type: pandas.CSVDataSet
   filepath: data/07_model_output/artefacts.csv
+
+my_plot_png:
+  type: kedro.extras.datasets.matplotlib.MatplotlibWriter
+  filepath: data/my_plot.png

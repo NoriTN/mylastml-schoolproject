@@ -1,6 +1,5 @@
 from kedro.pipeline import Pipeline, node, pipeline
-
-from .nodes import evaluate_model, split_data, train_model
+from .nodes import evaluate_model, split_data, train_model, gen_artifacts
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -24,6 +23,11 @@ def create_pipeline(**kwargs) -> Pipeline:
                 outputs="artefacts",
                 name="evaluate_model_node",
             ),
+            node(
+                func=gen_artifacts,
+                inputs=["model_pkl", "X_test", "y_test"],
+                outputs="my_plot_png",
+                name="gen_artifacts_node",
+            )
         ]
     )
-
